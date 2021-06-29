@@ -1,0 +1,12 @@
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\bin\Debug\PolatBearDetection.exe.config
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\bin\Debug\PolatBearDetection.exe
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\bin\Debug\PolatBearDetection.pdb
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.csproj.AssemblyReference.cache
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.Properties.Resources.resources
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.csproj.GenerateResource.cache
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.csproj.CoreCompileInputs.cache
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.exe
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.pdb
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\bin\Debug\Guna.UI2.dll
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolatBearDetection.csproj.CopyComplete
+C:\Users\karal\source\repos\PolatBearDetection\PolatBearDetection\obj\Debug\PolarBearDetection.MainForm.resources
