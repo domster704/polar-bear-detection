@@ -1,0 +1,12 @@
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\PolatBearDetection.exe.config
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\PolatBearDetection.exe
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\PolatBearDetection.pdb
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Guna.UI2.dll
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolarBearDetection.csproj.AssemblyReference.cache
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolarBearDetection.MainForm.resources
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.Properties.Resources.resources
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolarBearDetection.csproj.GenerateResource.cache
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolarBearDetection.csproj.CoreCompileInputs.cache
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolarBearDetection.csproj.CopyComplete
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.exe
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.pdb
