@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PolarBearDetection.Properties {
+namespace PolatBearDetection.Properties {
     using System;
     
     

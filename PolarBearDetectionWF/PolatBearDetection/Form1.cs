@@ -2,11 +2,11 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace PolarBearDetection
+namespace PolatBearDetection
 {
     public partial class MainForm : Form
     {
-        private TransitionHandler _findSubmenuTransitionHandler;
+        private readonly TransitionHandler _findSubmenuTransitionHandler;
 
         public MainForm()
         {

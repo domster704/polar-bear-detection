@@ -1,7 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using System.Windows.Forms;
 
-namespace PolarBearDetection
+namespace PolatBearDetection
 {
     public class TransitionHandler
     {
