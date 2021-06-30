@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace PolatBearDetection
@@ -12,10 +12,12 @@ namespace PolatBearDetection
         {
             InitializeComponent();
 
-            _findSubmenuTransitionHandler = new TransitionHandler(FindBearSubMenuTransition, FindSubmenuPanel, false);
+            _findSubmenuTransitionHandler = new TransitionHandler(FindBearSubMenuTransition,
+                                                                  FindSubmenuPanel,
+                                                                  false);
         }
 
-        private void FindButton_Click(object sender, EventArgs e)
+        private void FindMenuButton_Click(object sender, EventArgs e)
         {
             _findSubmenuTransitionHandler.Process();
         }
@@ -30,14 +32,15 @@ namespace PolatBearDetection
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
 
-            try
-            {
-                BearPictureBox.Image = new Bitmap(openFileDialog.FileName);
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка при открытии файла. Проверьте формат файла.");
-            }
+            var photoSave = new BearPhotoSave(openFileDialog.FileName, "Data", "Bear");
+
+            photoSave.Save();
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            PythonExecutor executor = new PythonExecutor("Python", "main.py");
+            executor.Execute();
         }
     }
 }
