@@ -27,6 +27,8 @@ namespace PolatBearDetection
         {
             InitializeComponent();
 
+            FormClosed += OnFormClosed;
+
             _bearFilesConfiguration = new DefaultBearFilesConfiguration();
             _pythonFilesConfiguration = new DefaultPythonFilesConfiguration();
 
@@ -78,10 +80,22 @@ namespace PolatBearDetection
 
             await _imageConverter.ExecuteAsync().ContinueWith(task =>
             {
-                var photoSave = new BearPhotoSave(_bearFilesConfiguration);
-                photoSave.Save();
+                var contains = Convert.ToBoolean(File.ReadAllText("Data/ContainsBear.txt"));
 
-                BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
+                BearFoundLabel.Text = contains ? "Медведь найден" : "Медведь не найден";
+
+                if (contains)
+                {
+                    var photoSave = new BearPhotoSave(_bearFilesConfiguration);
+                    photoSave.Save();
+
+                    BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
+                }
+                else
+                {
+                    BearPictureBox.RefreshWithImage(Resources.Cross);
+                    BearFoundLabel.ForeColor = Color.Red;
+                }
             });
 
             ProcessButtons();

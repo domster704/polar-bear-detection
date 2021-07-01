@@ -30,34 +30,34 @@ namespace PolatBearDetection
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation7 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Guna.UI2.AnimatorNS.Animation animation8 = new Guna.UI2.AnimatorNS.Animation();
-            Guna.UI2.AnimatorNS.Animation animation9 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.FindSubmenuPanel = new System.Windows.Forms.Panel();
             this.SaveResultImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ChooseImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.FindMenuButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.FindBearSubMenuTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.CloseControlBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.MaximizeControlBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.MinimazeControlBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.DragPanelUp = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BearFoundLabel = new System.Windows.Forms.Label();
             this.FindButton = new Guna.UI2.WinForms.Guna2Button();
-            this.BearPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.BordlessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.UpPanelDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.LogoDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.FindSubmenuTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.TransparentTransition = new Guna.UI2.WinForms.Guna2Transition();
+            this.BearPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.SideMenuPanel.SuspendLayout();
             this.FindSubmenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.DragPanelUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BearPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // SideMenuPanel
@@ -172,39 +172,25 @@ namespace PolatBearDetection
             this.FindMenuButton.Text = "Поискать медведя";
             this.FindMenuButton.Click += new System.EventHandler(this.FindMenuButton_Click);
             // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.BackgroundImage")));
-            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TransparentTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.FindSubmenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.FindBearSubMenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(250, 100);
-            this.LogoPictureBox.TabIndex = 0;
-            this.LogoPictureBox.TabStop = false;
-            // 
             // FindBearSubMenuTransition
             // 
             this.FindBearSubMenuTransition.Cursor = null;
-            animation7.AnimateOnlyDifferences = true;
-            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
-            animation7.LeafCoeff = 0F;
-            animation7.MaxTime = 1F;
-            animation7.MinTime = 0F;
-            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
-            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
-            animation7.MosaicSize = 0;
-            animation7.Padding = new System.Windows.Forms.Padding(0);
-            animation7.RotateCoeff = 0F;
-            animation7.RotateLimit = 0F;
-            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
-            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
-            animation7.TimeCoeff = 0F;
-            animation7.TransparencyCoeff = 0F;
-            this.FindBearSubMenuTransition.DefaultAnimation = animation7;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.FindBearSubMenuTransition.DefaultAnimation = animation1;
             // 
             // CloseControlBox
             // 
@@ -269,20 +255,19 @@ namespace PolatBearDetection
             this.DragPanelUp.Size = new System.Drawing.Size(700, 28);
             this.DragPanelUp.TabIndex = 5;
             // 
-            // label1
+            // BearFoundLabel
             // 
-            this.TransparentTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.FindSubmenuTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.FindBearSubMenuTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(245)))), ((int)(((byte)(116)))));
-            this.label1.Location = new System.Drawing.Point(250, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(700, 50);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Bear Found Label";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TransparentTransition.SetDecoration(this.BearFoundLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.BearFoundLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindBearSubMenuTransition.SetDecoration(this.BearFoundLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.BearFoundLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BearFoundLabel.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BearFoundLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(245)))), ((int)(((byte)(116)))));
+            this.BearFoundLabel.Location = new System.Drawing.Point(250, 28);
+            this.BearFoundLabel.Name = "BearFoundLabel";
+            this.BearFoundLabel.Size = new System.Drawing.Size(700, 50);
+            this.BearFoundLabel.TabIndex = 6;
+            this.BearFoundLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FindButton
             // 
@@ -309,6 +294,61 @@ namespace PolatBearDetection
             this.FindButton.Visible = false;
             this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
+            // BordlessForm
+            // 
+            this.BordlessForm.AnimateWindow = true;
+            this.BordlessForm.BorderRadius = 15;
+            this.BordlessForm.ContainerControl = this;
+            // 
+            // UpPanelDragControl
+            // 
+            this.UpPanelDragControl.TargetControl = this.DragPanelUp;
+            // 
+            // LogoDragControl
+            // 
+            this.LogoDragControl.TargetControl = this.LogoPictureBox;
+            // 
+            // FindSubmenuTransition
+            // 
+            this.FindSubmenuTransition.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.FindSubmenuTransition.DefaultAnimation = animation2;
+            // 
+            // TransparentTransition
+            // 
+            this.TransparentTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
+            this.TransparentTransition.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 1F;
+            this.TransparentTransition.DefaultAnimation = animation3;
+            // 
             // BearPictureBox
             // 
             this.BearPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -327,60 +367,19 @@ namespace PolatBearDetection
             this.BearPictureBox.TabIndex = 7;
             this.BearPictureBox.TabStop = false;
             // 
-            // BordlessForm
+            // LogoPictureBox
             // 
-            this.BordlessForm.AnimateWindow = true;
-            this.BordlessForm.BorderRadius = 15;
-            this.BordlessForm.ContainerControl = this;
-            // 
-            // UpPanelDragControl
-            // 
-            this.UpPanelDragControl.TargetControl = this.DragPanelUp;
-            // 
-            // LogoDragControl
-            // 
-            this.LogoDragControl.TargetControl = this.LogoPictureBox;
-            // 
-            // FindSubmenuTransition
-            // 
-            this.FindSubmenuTransition.Cursor = null;
-            animation8.AnimateOnlyDifferences = true;
-            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
-            animation8.LeafCoeff = 0F;
-            animation8.MaxTime = 1F;
-            animation8.MinTime = 0F;
-            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
-            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
-            animation8.MosaicSize = 0;
-            animation8.Padding = new System.Windows.Forms.Padding(0);
-            animation8.RotateCoeff = 0F;
-            animation8.RotateLimit = 0F;
-            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
-            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
-            animation8.TimeCoeff = 0F;
-            animation8.TransparencyCoeff = 0F;
-            this.FindSubmenuTransition.DefaultAnimation = animation8;
-            // 
-            // TransparentTransition
-            // 
-            this.TransparentTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
-            this.TransparentTransition.Cursor = null;
-            animation9.AnimateOnlyDifferences = true;
-            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
-            animation9.LeafCoeff = 0F;
-            animation9.MaxTime = 1F;
-            animation9.MinTime = 0F;
-            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
-            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
-            animation9.MosaicSize = 0;
-            animation9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation9.RotateCoeff = 0F;
-            animation9.RotateLimit = 0F;
-            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
-            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
-            animation9.TimeCoeff = 0F;
-            animation9.TransparencyCoeff = 1F;
-            this.TransparentTransition.DefaultAnimation = animation9;
+            this.LogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.BackgroundImage")));
+            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TransparentTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindBearSubMenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(250, 100);
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
             // 
             // MainForm
             // 
@@ -391,7 +390,7 @@ namespace PolatBearDetection
             this.ClientSize = new System.Drawing.Size(950, 600);
             this.Controls.Add(this.FindButton);
             this.Controls.Add(this.BearPictureBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BearFoundLabel);
             this.Controls.Add(this.DragPanelUp);
             this.Controls.Add(this.SideMenuPanel);
             this.TransparentTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -407,9 +406,9 @@ namespace PolatBearDetection
             this.Text = "Polar Bear Detection";
             this.SideMenuPanel.ResumeLayout(false);
             this.FindSubmenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.DragPanelUp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BearPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,7 +430,7 @@ namespace PolatBearDetection
         private System.Windows.Forms.Panel FindSubmenuPanel;
         private Guna.UI2.WinForms.Guna2GradientButton ChooseImageButton;
         private Guna.UI2.WinForms.Guna2GradientButton SaveResultImageButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label BearFoundLabel;
         private Guna.UI2.WinForms.Guna2PictureBox BearPictureBox;
         private Guna.UI2.WinForms.Guna2Button FindButton;
         private Guna.UI2.WinForms.Guna2Transition TransparentTransition;
