@@ -30,6 +30,17 @@ namespace PolatBearDetection.Tween
             _transition.HideSync(_control);
         }
 
+        public void Process(bool show)
+        {
+            if (show)
+            {
+                Show();
+                return;
+            }
+
+            Hide();
+        }
+
         public void Show()
         {
             Shown = true;

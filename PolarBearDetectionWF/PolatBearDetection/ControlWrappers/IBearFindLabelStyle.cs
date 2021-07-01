@@ -6,5 +6,8 @@ namespace PolatBearDetection.ControlWrappers
     {
         Color Found { get; }
         Color NotFound { get; }
+
+        string FoundText { get; }
+        string NotFoundText { get; }
     }
 }

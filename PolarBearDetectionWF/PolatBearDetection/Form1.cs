@@ -18,6 +18,7 @@ namespace PolatBearDetection
         private readonly TransitionHandler _findSubmenuTransitionHandler;
         private readonly TransitionHandler _findButtonTransitionHandler;
         private readonly TransitionHandler _closeButtonTransitionHandler;
+        private readonly TransitionHandler _chooseImageButtonHandler;
 
         private readonly PythonExecutor _imageConverter;
 
@@ -41,6 +42,7 @@ namespace PolatBearDetection
 
             _findButtonTransitionHandler = new TransitionHandler(TransparentTransition, FindButton, false);
             _closeButtonTransitionHandler = new TransitionHandler(TransparentTransition, SaveResultImageButton, true);
+            _chooseImageButtonHandler = new TransitionHandler(TransparentTransition, ChooseImageButton, true);
 
             _imageConverter = new PythonImageConverter(_pythonFilesConfiguration);
 
@@ -77,40 +79,31 @@ namespace PolatBearDetection
         {
             BearPictureBox.RefreshWithImage(Resources.Preloader);
 
+            _chooseImageButtonHandler.Hide();
+            _findButtonTransitionHandler.Hide();
+
             await _imageConverter.ExecuteAsync().ContinueWith(task =>
             {
-                var contains = Convert.ToBoolean(File.ReadAllText("Data/ContainsBear.txt"));
+                _chooseImageButtonHandler.Show();
 
-                BearFoundLabel.Text = contains ? "Медведь найден" : "Медведь не найден";
+                var contains = Convert.ToBoolean(File.ReadAllText("Data/ContainsBear.txt"));
 
                 if (contains)
                 {
                     var photoSave = new BearPhotoSave(_bearFilesConfiguration);
                     photoSave.Save();
+                }
 
-                    BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
-                    _closeButtonTransitionHandler.Show();
-                    _bearFoundLabelWrapper.SetBearFoundStyle();
-                }
-                else
-                {
-                    BearPictureBox.RefreshWithImage(Resources.Cross);
-                    _bearFoundLabelWrapper.SetBearNotFoundStyle();
-                    _closeButtonTransitionHandler.Hide();
-                }
+                var image = contains ? new Bitmap(_bearFilesConfiguration.CopiedFileName) : Resources.Cross;
+                BearPictureBox.RefreshWithImage(image);
+                _bearFoundLabelWrapper.SetStyle(contains);
+                _closeButtonTransitionHandler.Process(contains);
             });
 
-            _findButtonTransitionHandler.Process();
         }
 
         private void SaveResultImageButton_Click(object sender, EventArgs e)
         {
-            if (File.Exists(_bearFilesConfiguration.CopiedFileName) == false)
-            {
-                MessageBox.Show("Результат отсутсвует. Нажмите \"Найти\"");
-                return;
-            }
-
             var saveFileDialog = new SaveFileDialog
             {
                 FileName = "BearFile",

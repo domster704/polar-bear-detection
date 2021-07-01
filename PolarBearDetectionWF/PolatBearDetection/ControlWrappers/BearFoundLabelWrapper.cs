@@ -18,14 +18,27 @@ namespace PolatBearDetection.ControlWrappers
             _label.Text = string.Empty;
         }
 
-        public void SetBearFoundStyle()
+        public void SetFoundStyle()
         {
+            _label.Text = _style.FoundText;
             _label.ForeColor = _style.Found;
         }
 
-        public void SetBearNotFoundStyle()
+        public void SetNotFoundStyle()
         {
+            _label.Text = _style.NotFoundText;
             _label.ForeColor = _style.NotFound;
+        }
+
+        public void SetStyle(bool found)
+        {
+            if (found)
+            {
+                SetFoundStyle();
+                return;
+            }
+
+            SetNotFoundStyle();
         }
     }
 }

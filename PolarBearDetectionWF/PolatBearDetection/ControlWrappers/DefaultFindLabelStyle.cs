@@ -7,5 +7,9 @@ namespace PolatBearDetection.ControlWrappers
         public Color Found => Color.FromArgb(104, 237, 198);
 
         public Color NotFound => Color.Crimson;
+
+        public string FoundText => "Медведь найден";
+
+        public string NotFoundText => "Медведь не найден";
     }
 }
