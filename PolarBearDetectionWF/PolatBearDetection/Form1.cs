@@ -57,6 +57,8 @@ namespace PolatBearDetection
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
 
+            BearFoundLabel.Text = string.Empty;
+
             var image = Resources.logo1;
             BearPictureBox.RefreshWithImage(image);
 
@@ -91,15 +93,18 @@ namespace PolatBearDetection
                     photoSave.Save();
 
                     BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
+                    _closeButtonTransitionHandler.Show();
+                    BearFoundLabel.ForeColor = Color.Green;
                 }
                 else
                 {
                     BearPictureBox.RefreshWithImage(Resources.Cross);
                     BearFoundLabel.ForeColor = Color.Red;
+                    _closeButtonTransitionHandler.Hide();
                 }
             });
 
-            ProcessButtons();
+            _findButtonTransitionHandler.Process();
         }
 
         private void SaveResultImageButton_Click(object sender, EventArgs e)
@@ -131,11 +136,6 @@ namespace PolatBearDetection
 
             foreach (var file in bearFiles)
                 File.Delete(file);
-        }
-        private void ProcessButtons()
-        {
-            _findButtonTransitionHandler.Process();
-            _closeButtonTransitionHandler.Process();
         }
     }
 }
