@@ -1,6 +1,3 @@
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolatBearDetection.exe.config
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolatBearDetection.exe
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolatBearDetection.pdb
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\Guna.UI2.dll
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\Microsoft.Dynamic.dll
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\Microsoft.Scripting.dll
@@ -14,5 +11,8 @@ C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\Po
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolarBearDetection.csproj.GenerateResource.cache
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolarBearDetection.csproj.CoreCompileInputs.cache
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolarBearDetection.csproj.CopyComplete
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolatBearDetection.exe
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolatBearDetection.pdb
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolarBearDetection.exe.config
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolarBearDetection.exe
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Release\PolarBearDetection.pdb
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolarBearDetection.exe
+C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Release\PolarBearDetection.pdb
