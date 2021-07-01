@@ -9,6 +9,7 @@ using PolatBearDetection.Python;
 using PolatBearDetection.Extensions;
 using PolatBearDetection.Properties;
 using PolatBearDetection.Configuration;
+using PolatBearDetection.ControlWrappers;
 
 namespace PolatBearDetection
 {
@@ -19,6 +20,8 @@ namespace PolatBearDetection
         private readonly TransitionHandler _closeButtonTransitionHandler;
 
         private readonly PythonExecutor _imageConverter;
+
+        private readonly BearFoundLabelWrapper _bearFoundLabelWrapper;
 
         private readonly IBearFilesConfiguration _bearFilesConfiguration;
         private readonly IPythonFilesConfiguration _pythonFilesConfiguration;
@@ -40,6 +43,8 @@ namespace PolatBearDetection
             _closeButtonTransitionHandler = new TransitionHandler(TransparentTransition, SaveResultImageButton, true);
 
             _imageConverter = new PythonImageConverter(_pythonFilesConfiguration);
+
+            _bearFoundLabelWrapper = new BearFoundLabelWrapper(BearFoundLabel, new DefaultFindLabelStyle());
         }
 
         private void FindMenuButton_Click(object sender, EventArgs e)
@@ -57,13 +62,11 @@ namespace PolatBearDetection
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
 
-            BearFoundLabel.Text = string.Empty;
+            _bearFoundLabelWrapper.SetEmptyText();
 
-            var image = Resources.logo1;
-            BearPictureBox.RefreshWithImage(image);
+            BearPictureBox.RefreshWithImage(Resources.logo1);
 
             var photoSave = new BearPhotoSave(openFileDialog.FileName, _bearFilesConfiguration);
-
             photoSave.Save();
 
             _findButtonTransitionHandler.Show();
@@ -72,14 +75,7 @@ namespace PolatBearDetection
 
         private async void FindButton_Click(object sender, EventArgs e)
         {
-            if (File.Exists(_bearFilesConfiguration.OriginalFileName) == false)
-            {
-                MessageBox.Show("Загрузите файл");
-                return;
-            }
-
-            var image = Resources.Preloader;
-            BearPictureBox.RefreshWithImage(image);
+            BearPictureBox.RefreshWithImage(Resources.Preloader);
 
             await _imageConverter.ExecuteAsync().ContinueWith(task =>
             {
@@ -94,12 +90,12 @@ namespace PolatBearDetection
 
                     BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
                     _closeButtonTransitionHandler.Show();
-                    BearFoundLabel.ForeColor = Color.Green;
+                    _bearFoundLabelWrapper.SetBearFoundStyle();
                 }
                 else
                 {
                     BearPictureBox.RefreshWithImage(Resources.Cross);
-                    BearFoundLabel.ForeColor = Color.Red;
+                    _bearFoundLabelWrapper.SetBearNotFoundStyle();
                     _closeButtonTransitionHandler.Hide();
                 }
             });
