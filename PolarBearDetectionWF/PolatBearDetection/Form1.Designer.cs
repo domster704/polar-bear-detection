@@ -30,9 +30,9 @@ namespace PolatBearDetection
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Guna.UI2.AnimatorNS.Animation animation6 = new Guna.UI2.AnimatorNS.Animation();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.FindSubmenuPanel = new System.Windows.Forms.Panel();
             this.SaveResultImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -45,8 +45,8 @@ namespace PolatBearDetection
             this.MinimazeControlBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.DragPanelUp = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.BearPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.FindButton = new Guna.UI2.WinForms.Guna2Button();
+            this.BearPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.BordlessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.UpPanelDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.LogoDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -109,6 +109,7 @@ namespace PolatBearDetection
             this.SaveResultImageButton.Size = new System.Drawing.Size(250, 60);
             this.SaveResultImageButton.TabIndex = 1;
             this.SaveResultImageButton.Text = "Сохранить результат";
+            this.SaveResultImageButton.Click += new System.EventHandler(this.SaveResultImageButton_Click);
             // 
             // ChooseImageButton
             // 
@@ -179,22 +180,22 @@ namespace PolatBearDetection
             // FindBearSubMenuTransition
             // 
             this.FindBearSubMenuTransition.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.FindBearSubMenuTransition.DefaultAnimation = animation5;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.FindBearSubMenuTransition.DefaultAnimation = animation2;
             // 
             // CloseControlBox
             // 
@@ -269,23 +270,6 @@ namespace PolatBearDetection
             this.label1.Text = "Bear Found Label";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BearPictureBox
-            // 
-            this.BearPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindBearSubMenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.FindSubmenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.BearPictureBox.Image = global::PolatBearDetection.Properties.Resources.logo1;
-            this.BearPictureBox.ImageRotate = 0F;
-            this.BearPictureBox.Location = new System.Drawing.Point(259, 100);
-            this.BearPictureBox.Name = "BearPictureBox";
-            this.BearPictureBox.ShadowDecoration.Parent = this.BearPictureBox;
-            this.BearPictureBox.Size = new System.Drawing.Size(679, 410);
-            this.BearPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BearPictureBox.TabIndex = 7;
-            this.BearPictureBox.TabStop = false;
-            // 
             // FindButton
             // 
             this.FindButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -309,6 +293,23 @@ namespace PolatBearDetection
             this.FindButton.Text = "Найти";
             this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
+            // BearPictureBox
+            // 
+            this.BearPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FindBearSubMenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.BearPictureBox.Image = global::PolatBearDetection.Properties.Resources.logo1;
+            this.BearPictureBox.ImageRotate = 0F;
+            this.BearPictureBox.Location = new System.Drawing.Point(259, 100);
+            this.BearPictureBox.Name = "BearPictureBox";
+            this.BearPictureBox.ShadowDecoration.Parent = this.BearPictureBox;
+            this.BearPictureBox.Size = new System.Drawing.Size(679, 410);
+            this.BearPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BearPictureBox.TabIndex = 7;
+            this.BearPictureBox.TabStop = false;
+            // 
             // BordlessForm
             // 
             this.BordlessForm.AnimateWindow = true;
@@ -326,22 +327,22 @@ namespace PolatBearDetection
             // FindSubmenuTransition
             // 
             this.FindSubmenuTransition.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 0F;
-            this.FindSubmenuTransition.DefaultAnimation = animation6;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.FindSubmenuTransition.DefaultAnimation = animation1;
             // 
             // MainForm
             // 
@@ -372,6 +373,9 @@ namespace PolatBearDetection
             ((System.ComponentModel.ISupportInitialize)(this.BearPictureBox)).EndInit();
             this.ResumeLayout(false);
 
+            //Form
+            FormClosed += OnFormClosed;
+            //
         }
 
         #endregion
