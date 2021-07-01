@@ -5,28 +5,40 @@ namespace PolatBearDetection.Tween
 {
     public class TransitionHandler
     {
+        public bool Shown { get; private set; }
+
         private readonly Guna2Transition _transition;
         private readonly Control _control;
-
-        private bool _shown;
 
         public TransitionHandler(Guna2Transition transition, Control control, bool shown = true)
         {
             _transition = transition;
             _control = control;
-            _shown = shown;
+            Shown = shown;
         }
 
         public void Process()
         {
-            _shown = !_shown;
+            Shown = !Shown;
 
-            if (_shown)
+            if (Shown)
             {
                 _transition.ShowSync(_control);
                 return;
             }
 
+            _transition.HideSync(_control);
+        }
+
+        public void Show()
+        {
+            Shown = true;
+            _transition.ShowSync(_control);
+        }
+
+        public void Hide()
+        {
+            Shown = false;
             _transition.HideSync(_control);
         }
     }

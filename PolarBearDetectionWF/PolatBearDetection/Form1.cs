@@ -64,7 +64,8 @@ namespace PolatBearDetection
 
             photoSave.Save();
 
-            ProcessButtons();
+            _findButtonTransitionHandler.Show();
+            _closeButtonTransitionHandler.Hide();
         }
 
         private async void FindButton_Click(object sender, EventArgs e)
