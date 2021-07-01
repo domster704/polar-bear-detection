@@ -10,17 +10,9 @@ C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\Pola
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.exe
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.pdb
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\obj\Debug\PolatBearDetection.MainForm.resources
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.dll
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.Modules.dll
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.SQLite.dll
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.Wpf.dll
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Dynamic.dll
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Scripting.dll
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Scripting.Metadata.dll
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.xml
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.Modules.xml
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.SQLite.xml
-C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\IronPython.Wpf.xml
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Dynamic.xml
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Scripting.xml
 C:\git\PolarBearDetection\PolarBearDetectionWF\PolatBearDetection\bin\Debug\Microsoft.Scripting.Metadata.xml
