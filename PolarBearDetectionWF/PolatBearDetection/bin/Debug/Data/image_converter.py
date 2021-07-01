@@ -11,7 +11,7 @@ def mapSV(value):
 
 
 def write_result_in_file(result):
-	with open('Processed/ContainsBear.txt', 'w', encoding='utf-8') as f:
+	with open('ContainsBear.txt', 'w', encoding='utf-8') as f:
 		f.write(f'{result}')
 
 
