@@ -2,16 +2,17 @@ import cv2
 import numpy as np
 
 IMG_SIZE = 900
-ASPECT_RATIO = 7360 / 4912
+W, H = 7360, 4912
+ASPECT_RATIO = W / H
 
 
 def mapSV(value):
-    return int(100 * (value / 255))
+	return int(100 * (value / 255))
 
 
 def write_result_in_file(result):
-    with open('ContainsBear.txt', 'w', encoding='utf-8') as f:
-        f.write(f'{result}')
+	with open('Processed/ContainsBear.txt', 'w', encoding='utf-8') as f:
+		f.write(f'{result}')
 
 
 file_name = 'Bear.jpg'
@@ -26,9 +27,9 @@ v_average = 0
 count = 0
 
 for i in range(0, v.shape[0], 115):
-    for j in range(0, v.shape[1], 307):
-        v_average += v[i][j]
-        count += 1
+	for j in range(0, v.shape[1], 307):
+		v_average += v[i][j]
+		count += 1
 
 v_average = mapSV(v_average / count) / 50
 
@@ -50,38 +51,38 @@ densityListWithCoord = []
 density = []
 radius = 5
 for i in range(maskCopy.shape[0]):
-    for j in range(maskCopy.shape[1]):
-        if maskCopy[i][j] != 0:
-            if i < radius or i > maskCopy.shape[0] - radius:
-                pass
-            elif j < radius or j > maskCopy.shape[1] - radius:
-                pass
-            else:
-                testImg = maskCopy[i - radius:i + radius, j - radius:j + radius]
-                countUnit = 0
-                for k in testImg:
-                    for l in k:
-                        if l != 0:
-                            countUnit += 1
-                densityListWithCoord.append([countUnit, (i, j)])
-                density.append(countUnit)
+	for j in range(maskCopy.shape[1]):
+		if maskCopy[i][j] != 0:
+			if i < radius or i > maskCopy.shape[0] - radius:
+				pass
+			elif j < radius or j > maskCopy.shape[1] - radius:
+				pass
+			else:
+				testImg = maskCopy[i - radius:i + radius, j - radius:j + radius]
+				countUnit = 0
+				for k in testImg:
+					for l in k:
+						if l != 0:
+							countUnit += 1
+				densityListWithCoord.append([countUnit, (i, j)])
+				density.append(countUnit)
 
 try:
-    maxDensityIndex = density.index(max(density))
+	maxDensityIndex = density.index(max(density))
 except:
-    write_result_in_file('false')
-    exit()
+	write_result_in_file('false')
+	exit()
 
 if 9 < densityListWithCoord[maxDensityIndex][0] < 16:
-    lineSize = 15
-    position = densityListWithCoord[maxDensityIndex][1]
-    y = position[0] - lineSize // 2
-    x = position[1] - lineSize // 2
-    h = lineSize
-    w = lineSize
-    orig_image = cv2.resize(orig_image, (int(NEW_SIZE * ASPECT_RATIO), NEW_SIZE))
-    cv2.rectangle(orig_image, (x, y), (x + w, y + h), (0, 0, 255), 1)
-    cv2.imwrite('BearConverted.JPG', orig_image)
-    write_result_in_file('true')
+	lineSize = 100
+	position = densityListWithCoord[maxDensityIndex][1]
+	y = int(position[0] * (H / NEW_SIZE)) - lineSize // 2
+	x = int(position[1] * (W / (NEW_SIZE * ASPECT_RATIO))) - lineSize // 2
+
+	h = lineSize
+	w = lineSize
+	cv2.rectangle(orig_image, (x, y), (x + w, y + h), (0, 0, 255), 10)
+	cv2.imwrite('BearConverted.JPG', orig_image)
+	write_result_in_file('true')
 else:
-    write_result_in_file('false')
+	write_result_in_file('false')
