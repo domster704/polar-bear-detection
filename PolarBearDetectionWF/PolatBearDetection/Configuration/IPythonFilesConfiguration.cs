@@ -2,7 +2,7 @@
 {
     public interface IPythonFilesConfiguration
     {
-        string Path { get; }
+        string Interpreter { get; }
         string Directory { get; }
         string ImageConverterScript { get; }
     }

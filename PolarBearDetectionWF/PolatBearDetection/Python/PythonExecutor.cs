@@ -1,19 +1,18 @@
-﻿using PolatBearDetection.Configuration;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace PolatBearDetection.Python
 {
     public class PythonExecutor
     {
-        private readonly string _path;
+        private readonly string _interpreter;
         private readonly string _directory;
         private readonly string _script;
         private readonly Process _process;
 
-        public PythonExecutor(string directory, string script, string path)
+        public PythonExecutor(string directory, string script, string interpreter)
         {
-            _path = path;
+            _interpreter = interpreter;
             _script = script;
             _directory = directory;
             _process = CreateProcess();
@@ -34,7 +33,7 @@ namespace PolatBearDetection.Python
         {
             var startInfo = new ProcessStartInfo("Python")
             {
-                FileName = _path,
+                FileName = _interpreter,
                 WorkingDirectory = _directory,
                 Arguments = _script,
                 UseShellExecute = false,
