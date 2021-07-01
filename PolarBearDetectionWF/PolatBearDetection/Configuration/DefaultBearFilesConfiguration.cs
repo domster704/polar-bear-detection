@@ -10,14 +10,21 @@ namespace PolatBearDetection.Configuration
 
         public string CopiedFileName => Combine("BearConverted_Copy");
 
-        private string Extension => ".JPG";
+        public string ContainsBearFile => Combine("ContainsBear", ".txt");
+
+        private string ImageExtension => ".JPG";
 
         private string DataDirectory => "Data";
 
 
         private string Combine(string fileName)
         {
-            return Path.Combine(DataDirectory, fileName) + Extension;
+            return Path.Combine(DataDirectory, fileName) + ImageExtension;
+        }
+
+        private string Combine(string fileName, string extension)
+        {
+            return Path.Combine(DataDirectory, fileName) + extension;
         }
     }
 }

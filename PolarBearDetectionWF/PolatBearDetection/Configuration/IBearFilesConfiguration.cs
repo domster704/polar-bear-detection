@@ -5,5 +5,6 @@
         string OriginalFileName { get; }
         string ConvertedFileName { get; }
         string CopiedFileName { get; }
+        string ContainsBearFile { get; }
     }
 }

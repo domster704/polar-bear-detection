@@ -79,6 +79,7 @@
     <Compile Include="ControlWrappers\DefaultFindLabelStyle.cs" />
     <Compile Include="ControlWrappers\IBearFindLabelStyle.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="IO\BearInfoReader.cs" />
     <Compile Include="IO\BearPhotoSave.cs" />
     <Compile Include="Extensions\PictureBoxExtensions.cs" />
     <Compile Include="Form1.cs">

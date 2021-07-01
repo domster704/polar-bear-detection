@@ -86,7 +86,7 @@ namespace PolatBearDetection
             {
                 _chooseImageButtonHandler.Show();
 
-                var contains = Convert.ToBoolean(File.ReadAllText("Data/ContainsBear.txt"));
+                var contains = new BearInfoReader(_bearFilesConfiguration).GetInfo();
 
                 if (contains)
                 {
@@ -94,12 +94,17 @@ namespace PolatBearDetection
                     photoSave.Save();
                 }
 
-                var image = contains ? new Bitmap(_bearFilesConfiguration.CopiedFileName) : Resources.Cross;
-                BearPictureBox.RefreshWithImage(image);
-                _bearFoundLabelWrapper.SetStyle(contains);
-                _closeButtonTransitionHandler.Process(contains);
+                RefreshViewByBear(contains);
             });
 
+        }
+
+        private void RefreshViewByBear(bool contains)
+        {
+            var image = contains ? new Bitmap(_bearFilesConfiguration.CopiedFileName) : Resources.Cross;
+            BearPictureBox.RefreshWithImage(image);
+            _bearFoundLabelWrapper.SetStyle(contains);
+            _closeButtonTransitionHandler.Process(contains);
         }
 
         private void SaveResultImageButton_Click(object sender, EventArgs e)
