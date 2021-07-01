@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
-using PolatBearDetection.Extensions;
-using PolatBearDetection.Properties;
+using PolatBearDetection.IO;
 using PolatBearDetection.Tween;
 using PolatBearDetection.Python;
-using PolatBearDetection.IO;
+using PolatBearDetection.Extensions;
+using PolatBearDetection.Properties;
 using PolatBearDetection.Configuration;
 
 namespace PolatBearDetection
@@ -15,6 +15,9 @@ namespace PolatBearDetection
     public partial class MainForm : Form
     {
         private readonly TransitionHandler _findSubmenuTransitionHandler;
+        private readonly TransitionHandler _findButtonTransitionHandler;
+        private readonly TransitionHandler _closeButtonTransitionHandler;
+
         private readonly PythonExecutor _imageConverter;
 
         private readonly IBearFilesConfiguration _bearFilesConfiguration;
@@ -30,6 +33,9 @@ namespace PolatBearDetection
             _findSubmenuTransitionHandler = new TransitionHandler(FindBearSubMenuTransition,
                                                                   FindSubmenuPanel,
                                                                   false);
+
+            _findButtonTransitionHandler = new TransitionHandler(TransparentTransition, FindButton, false);
+            _closeButtonTransitionHandler = new TransitionHandler(TransparentTransition, SaveResultImageButton, true);
 
             _imageConverter = new PythonImageConverter(_pythonFilesConfiguration);
         }
@@ -49,9 +55,14 @@ namespace PolatBearDetection
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
 
+            var image = Resources.logo1;
+            BearPictureBox.RefreshWithImage(image);
+
             var photoSave = new BearPhotoSave(openFileDialog.FileName, _bearFilesConfiguration);
 
             photoSave.Save();
+
+            ProcessButtons();
         }
 
         private async void FindButton_Click(object sender, EventArgs e)
@@ -72,6 +83,8 @@ namespace PolatBearDetection
 
                 BearPictureBox.Image = new Bitmap(_bearFilesConfiguration.CopiedFileName);
             });
+
+            ProcessButtons();
         }
 
         private void SaveResultImageButton_Click(object sender, EventArgs e)
@@ -102,9 +115,12 @@ namespace PolatBearDetection
             var bearFiles = Directory.GetFiles("Data").Where(name => name.Contains("Bear"));
 
             foreach (var file in bearFiles)
-            {
                 File.Delete(file);
-            }
+        }
+        private void ProcessButtons()
+        {
+            _findButtonTransitionHandler.Process();
+            _closeButtonTransitionHandler.Process();
         }
     }
 }

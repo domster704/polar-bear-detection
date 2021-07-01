@@ -30,9 +30,10 @@ namespace PolatBearDetection
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation7 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Guna.UI2.AnimatorNS.Animation animation8 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation9 = new Guna.UI2.AnimatorNS.Animation();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.FindSubmenuPanel = new System.Windows.Forms.Panel();
             this.SaveResultImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -51,6 +52,7 @@ namespace PolatBearDetection
             this.UpPanelDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.LogoDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.FindSubmenuTransition = new Guna.UI2.WinForms.Guna2Transition();
+            this.TransparentTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.SideMenuPanel.SuspendLayout();
             this.FindSubmenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -64,8 +66,9 @@ namespace PolatBearDetection
             this.SideMenuPanel.Controls.Add(this.FindSubmenuPanel);
             this.SideMenuPanel.Controls.Add(this.FindMenuButton);
             this.SideMenuPanel.Controls.Add(this.LogoPictureBox);
-            this.FindSubmenuTransition.SetDecoration(this.SideMenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.SideMenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.SideMenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.SideMenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.SideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.SideMenuPanel.Name = "SideMenuPanel";
@@ -76,8 +79,9 @@ namespace PolatBearDetection
             // 
             this.FindSubmenuPanel.Controls.Add(this.SaveResultImageButton);
             this.FindSubmenuPanel.Controls.Add(this.ChooseImageButton);
-            this.FindSubmenuTransition.SetDecoration(this.FindSubmenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.FindSubmenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.FindSubmenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.FindSubmenuPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindSubmenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.FindSubmenuPanel.Location = new System.Drawing.Point(0, 175);
             this.FindSubmenuPanel.Name = "FindSubmenuPanel";
@@ -89,8 +93,9 @@ namespace PolatBearDetection
             // 
             this.SaveResultImageButton.CheckedState.Parent = this.SaveResultImageButton;
             this.SaveResultImageButton.CustomImages.Parent = this.SaveResultImageButton;
-            this.FindSubmenuTransition.SetDecoration(this.SaveResultImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.SaveResultImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.SaveResultImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.SaveResultImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.SaveResultImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SaveResultImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SaveResultImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -109,14 +114,16 @@ namespace PolatBearDetection
             this.SaveResultImageButton.Size = new System.Drawing.Size(250, 60);
             this.SaveResultImageButton.TabIndex = 1;
             this.SaveResultImageButton.Text = "Сохранить результат";
+            this.SaveResultImageButton.Visible = false;
             this.SaveResultImageButton.Click += new System.EventHandler(this.SaveResultImageButton_Click);
             // 
             // ChooseImageButton
             // 
             this.ChooseImageButton.CheckedState.Parent = this.ChooseImageButton;
             this.ChooseImageButton.CustomImages.Parent = this.ChooseImageButton;
-            this.FindSubmenuTransition.SetDecoration(this.ChooseImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.ChooseImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.ChooseImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.ChooseImageButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.ChooseImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ChooseImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ChooseImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -142,8 +149,9 @@ namespace PolatBearDetection
             this.FindMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.FindMenuButton.CheckedState.Parent = this.FindMenuButton;
             this.FindMenuButton.CustomImages.Parent = this.FindMenuButton;
-            this.FindSubmenuTransition.SetDecoration(this.FindMenuButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.FindMenuButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.FindMenuButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.FindMenuButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindMenuButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.FindMenuButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.FindMenuButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -168,8 +176,9 @@ namespace PolatBearDetection
             // 
             this.LogoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.BackgroundImage")));
             this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FindBearSubMenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindSubmenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindBearSubMenuTransition.SetDecoration(this.LogoPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.LogoPictureBox.Name = "LogoPictureBox";
@@ -180,28 +189,29 @@ namespace PolatBearDetection
             // FindBearSubMenuTransition
             // 
             this.FindBearSubMenuTransition.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.FindBearSubMenuTransition.DefaultAnimation = animation2;
+            animation7.AnimateOnlyDifferences = true;
+            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
+            animation7.LeafCoeff = 0F;
+            animation7.MaxTime = 1F;
+            animation7.MinTime = 0F;
+            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
+            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
+            animation7.MosaicSize = 0;
+            animation7.Padding = new System.Windows.Forms.Padding(0);
+            animation7.RotateCoeff = 0F;
+            animation7.RotateLimit = 0F;
+            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
+            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
+            animation7.TimeCoeff = 0F;
+            animation7.TransparencyCoeff = 0F;
+            this.FindBearSubMenuTransition.DefaultAnimation = animation7;
             // 
             // CloseControlBox
             // 
             this.CloseControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindSubmenuTransition.SetDecoration(this.CloseControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.CloseControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.CloseControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.CloseControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.CloseControlBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(190)))), ((int)(((byte)(222)))));
             this.CloseControlBox.HoverState.Parent = this.CloseControlBox;
             this.CloseControlBox.IconColor = System.Drawing.Color.White;
@@ -215,8 +225,9 @@ namespace PolatBearDetection
             // 
             this.MaximizeControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MaximizeControlBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.FindSubmenuTransition.SetDecoration(this.MaximizeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.MaximizeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.MaximizeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.MaximizeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.MaximizeControlBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(190)))), ((int)(((byte)(222)))));
             this.MaximizeControlBox.HoverState.Parent = this.MaximizeControlBox;
             this.MaximizeControlBox.IconColor = System.Drawing.Color.White;
@@ -231,8 +242,9 @@ namespace PolatBearDetection
             this.MinimazeControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinimazeControlBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(190)))), ((int)(((byte)(222)))));
             this.MinimazeControlBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.FindSubmenuTransition.SetDecoration(this.MinimazeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.MinimazeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.MinimazeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.MinimazeControlBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.MinimazeControlBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(190)))), ((int)(((byte)(222)))));
             this.MinimazeControlBox.HoverState.Parent = this.MinimazeControlBox;
             this.MinimazeControlBox.IconColor = System.Drawing.Color.White;
@@ -247,8 +259,9 @@ namespace PolatBearDetection
             this.DragPanelUp.Controls.Add(this.MaximizeControlBox);
             this.DragPanelUp.Controls.Add(this.MinimazeControlBox);
             this.DragPanelUp.Controls.Add(this.CloseControlBox);
-            this.FindSubmenuTransition.SetDecoration(this.DragPanelUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.DragPanelUp, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.DragPanelUp, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.DragPanelUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DragPanelUp.Dock = System.Windows.Forms.DockStyle.Top;
             this.DragPanelUp.Location = new System.Drawing.Point(250, 0);
             this.DragPanelUp.Name = "DragPanelUp";
@@ -258,8 +271,9 @@ namespace PolatBearDetection
             // 
             // label1
             // 
-            this.FindBearSubMenuTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindSubmenuTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindBearSubMenuTransition.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(245)))), ((int)(((byte)(116)))));
@@ -275,8 +289,9 @@ namespace PolatBearDetection
             this.FindButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.FindButton.CheckedState.Parent = this.FindButton;
             this.FindButton.CustomImages.Parent = this.FindButton;
-            this.FindSubmenuTransition.SetDecoration(this.FindButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.FindButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this.FindButton, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this.FindButton, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.FindButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.FindButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -291,6 +306,7 @@ namespace PolatBearDetection
             this.FindButton.Size = new System.Drawing.Size(196, 45);
             this.FindButton.TabIndex = 8;
             this.FindButton.Text = "Найти";
+            this.FindButton.Visible = false;
             this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
             // BearPictureBox
@@ -298,6 +314,7 @@ namespace PolatBearDetection
             this.BearPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TransparentTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindSubmenuTransition.SetDecoration(this.BearPictureBox, Guna.UI2.AnimatorNS.DecorationType.None);
             this.BearPictureBox.Image = global::PolatBearDetection.Properties.Resources.logo1;
@@ -327,22 +344,43 @@ namespace PolatBearDetection
             // FindSubmenuTransition
             // 
             this.FindSubmenuTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.FindSubmenuTransition.DefaultAnimation = animation1;
+            animation8.AnimateOnlyDifferences = true;
+            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
+            animation8.LeafCoeff = 0F;
+            animation8.MaxTime = 1F;
+            animation8.MinTime = 0F;
+            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
+            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
+            animation8.MosaicSize = 0;
+            animation8.Padding = new System.Windows.Forms.Padding(0);
+            animation8.RotateCoeff = 0F;
+            animation8.RotateLimit = 0F;
+            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
+            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
+            animation8.TimeCoeff = 0F;
+            animation8.TransparencyCoeff = 0F;
+            this.FindSubmenuTransition.DefaultAnimation = animation8;
+            // 
+            // TransparentTransition
+            // 
+            this.TransparentTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
+            this.TransparentTransition.Cursor = null;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 1F;
+            this.TransparentTransition.DefaultAnimation = animation9;
             // 
             // MainForm
             // 
@@ -356,8 +394,9 @@ namespace PolatBearDetection
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DragPanelUp);
             this.Controls.Add(this.SideMenuPanel);
-            this.FindSubmenuTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.TransparentTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FindBearSubMenuTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FindSubmenuTransition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -373,9 +412,6 @@ namespace PolatBearDetection
             ((System.ComponentModel.ISupportInitialize)(this.BearPictureBox)).EndInit();
             this.ResumeLayout(false);
 
-            //Form
-            FormClosed += OnFormClosed;
-            //
         }
 
         #endregion
@@ -398,6 +434,7 @@ namespace PolatBearDetection
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox BearPictureBox;
         private Guna.UI2.WinForms.Guna2Button FindButton;
+        private Guna.UI2.WinForms.Guna2Transition TransparentTransition;
     }
 }
 

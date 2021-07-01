@@ -75,6 +75,7 @@
     <Compile Include="Configuration\DefaultPythonFilesConfiguration.cs" />
     <Compile Include="Configuration\IBearFilesConfiguration.cs" />
     <Compile Include="Configuration\IPythonFilesConfiguration.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="IO\BearPhotoSave.cs" />
     <Compile Include="Extensions\PictureBoxExtensions.cs" />
     <Compile Include="Form1.cs">
